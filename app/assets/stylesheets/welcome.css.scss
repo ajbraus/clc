@@ -35,28 +35,6 @@ header {
 	text-align: center;
 }
 
-.nav {
-	position:fixed;
-	left:0;
-	top:180px;
-	height:100%;
-	width:80px;
-	display: block;
-	/*background:url('strip.png') no-repeat 0 0;*/
-	background-size: 80px;
-	z-index: 10;
-	a {
-		text-decoration: none;
-	}
-	img {
-		position: relative;
-		right:30px;
-		top:30px;
-		width:60px;
-		opacity: 2;
-	}
-}
-
 #logo {
 	margin-left:auto;
 	margin-right:auto;
@@ -122,10 +100,10 @@ overflow: hidden;
 
 #hero {
 	img {
-		width:400px;
+		width:210px;
 		position: relative;
-		right:50px;
-		top:30px;
+    left: 28px;
+    bottom:10px;
 		z-index: 0;
 	}
 	p {
@@ -135,6 +113,9 @@ overflow: hidden;
 		float:right;
 		font-size: 27px;
 	}
+  h3 {
+    line-height: 1;
+  }
 	form{
 position: absolute;
 top: 380px;
@@ -237,4 +218,17 @@ left: 670px;
   border: 1px solid #970F0F;
 }
 
+.half-width {
+  width:280px;
+}
 
+.greencheese {
+  &:hover {
+    color:green;
+  }
+}
+
+.factory {
+    position: relative;
+bottom: 4px;
+}

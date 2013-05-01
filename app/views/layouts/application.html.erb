@@ -37,42 +37,30 @@
     <% end %>
   </head>
   <body>
-<% if false %>
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <%= link_to "CLC", root_path, class:"brand" %>
-<!--           <div class="container nav-collapse">
-            <ul class="nav">
-              <li>links</li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
+        <ul class="nav">
+      <li><%= link_to "Cost of Living Card", root_path, class:"brand" %></li>
+      <li><%= link_to "http://costoflivingcard.blogspot.com/" do %>
+        <%= image_tag 'greenfactory.png', width:"20px", class:"factory" %> <span class="greencheese">Blog</span>
+        <% end %>
+      </li>
+    </ul>
+        </div>      
       </div>
     </div>
-<% end %>
-  
+
     <div class="container">
         <div class="row">
             <%= bootstrap_flash %>
             <%= yield %>
-          <ul class="nav nav-list">
-            <li><a href="#hero">welcome</a></li>
-            <li><a href="#problem">problem</a></li>
-            <li><a href="#solution">solution</a></li>
-            <li><a href="#join">join</a></li>
-          </ul>
         </div><!--/row-->
-
+<!-- 
       <footer>
         <p>&copy; Costoflivingcard 2013</p>
       </footer>
-
+ -->
     </div> <!-- /container -->
 
     <!-- Javascripts

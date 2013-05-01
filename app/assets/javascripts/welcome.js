@@ -1,8 +1,8 @@
 
 $(document).ready(function() {
-	
+
   $(function() {
-      $('ul.nav a').bind('click',function(event){
+      $('ul.nav a, .next').bind('click',function(event){
           var $anchor = $(this);
           /*
           if you want to use one of the easing effects:

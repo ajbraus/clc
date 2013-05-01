@@ -1,11 +1,58 @@
 <div id="sideways">
 	<div class="scene" id="hero">
 
-	<h1>Cost of living rising in your neighborhood?</h1>
-		  <%= high_chart("my_id4", @chart) do |c| %>
-        <%= raw "options.tooltip.formatter = function() {return this.point.name +'</b>: '+ this.y +' %';}"  %>
-        <%= raw "options.plotOptions.pie.dataLabels.formatter = function() { if (this.y > 5) return this.point.name; }"  %>
-      <% end %>
+	<h1>Your Personalized Cost of Living Calculator</h1>
+	  <div class="half-width pull-left">
+	  	<h3>
+	  		Are you the same as your neighbor?
+	  	</h3>
+	  	<div class="lead">
+	  		The Bureau of Labor Statistics thinks so. They treat everyone the same.
+	  	</div>
+	  	<div class="lead">
+	  		At Cost of Living Card we believe that your cost of living is personal.
+	  	</div>
+	  </div>
+	  <div class="pull-right half-width push-up">
+	  	<%= image_tag 'blsseesyou.jpg' %>
+	  	<div class="text-center">
+	  		<%= link_to "Get Started (Its Free!)", "#problem", class:'btn btn-large btn-primary next' %>
+	  	</div>
+	  </div>
+	</div>
+
+	<div class="scene" id="problem">
+		<h3>Spending Breakdown</h3>
+		<div class="muted">Standard Urban Consumer</div>
+		<ul>
+			<li>
+				Apparel
+			</li>
+			<li>
+				Food & Beverage
+			</li>
+			<li>
+				Technology
+			</li>
+			<li>
+				Medical
+			</li>
+			<li>
+				Education
+			</li>			
+			<li>
+				Personal Care
+			</li>
+			<li>
+				Recreation
+			</li>
+			<li>
+				Transport
+			</li>
+			<li>
+				Housing
+			</li>
+		</ul>
 	</div>
 
 	<div class="scene" id="problem">
@@ -20,12 +67,9 @@
 		</p>
 
 
-	</div>
-
-	<div class="scene" id="solution">
-
 	<h1>Pay Anywhere, Save Everywhere</h1>
 	<p>We provide a <strong>universal payment network</strong>,<br><br> and we aggregate living costs across the US <strong>your savings</strong> travel with you.</p>
+
 
 	</div>
 

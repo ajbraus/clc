@@ -14,3 +14,16 @@ Maybe just a questionairre -
 	basically if they purchase luxury goods
 
 	What is the most expensive meal you had in the past year?
+
+
+		  <%= high_chart("my_id4", @chart) do |c| %>
+	      <%= raw "options.tooltip.formatter = function() {return this.point.name +'</b>: '+ this.y +' %';}"  %>
+	      <%= raw "options.plotOptions.pie.dataLabels.formatter = function() { if (this.y > 5) return this.point.name; }"  %>
+	    <% end %>
+
+# of cars
+Health insurance
+
+Zip code
+
+heat map of inflation of the US
