@@ -15,15 +15,22 @@ Maybe just a questionairre -
 
 	What is the most expensive meal you had in the past year?
 
-
-		  <%= high_chart("my_id4", @chart) do |c| %>
-	      <%= raw "options.tooltip.formatter = function() {return this.point.name +'</b>: '+ this.y +' %';}"  %>
-	      <%= raw "options.plotOptions.pie.dataLabels.formatter = function() { if (this.y > 5) return this.point.name; }"  %>
-	    <% end %>
-
+rent or buy house
 # of cars
+In school or have children
 Health insurance
-
 Zip code
 
 heat map of inflation of the US
+least and most inflationary parts of the economy
+show government spending
+show stock prices 
+show gold over the top
+show gas price
+
+credit card interest rates
+tuition
+taxes
+
+what is weighted to the CPI? 
+  - social security 

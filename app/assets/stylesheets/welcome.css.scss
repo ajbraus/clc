@@ -232,3 +232,28 @@ left: 670px;
     position: relative;
 bottom: 4px;
 }
+
+.weight-field {
+  width:50px;
+  display: inline;
+  margin-bottom:4px !important;
+}
+
+label {
+  float: left;
+  width:100px;
+top: 5px;
+position: relative;
+margin-right: 10px;
+}
+
+#pieChart {
+width: 329px;
+float: right;
+position: relative;
+bottom: 49px;
+}
+
+.spending {
+  width: 240px;
+}

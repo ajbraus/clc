@@ -22,40 +22,56 @@
 	</div>
 
 	<div class="scene" id="problem">
-		<h3>Spending Breakdown</h3>
-		<div class="muted">Standard Urban Consumer</div>
-		<ul>
-			<li>
-				Apparel
-			</li>
-			<li>
-				Food & Beverage
-			</li>
-			<li>
-				Technology
-			</li>
-			<li>
-				Medical
-			</li>
-			<li>
-				Education
-			</li>			
-			<li>
-				Personal Care
-			</li>
-			<li>
-				Recreation
-			</li>
-			<li>
-				Transport
-			</li>
-			<li>
-				Housing
-			</li>
-		</ul>
+		<h2>Spending Breakdown</h2>
+		<div class="pull-left spending">
+			<ul>
+				<li>
+					<%= label_tag :apparel, "Apparel" %>
+	  			<%= text_field_tag :apparel, nil, autocomplete: "off", class:"weight-field" %>
+				</li>
+				<li>
+					<%= label_tag :food, "Groceries" %>
+	  			<%= text_field_tag :food, nil, autocomplete: "off", class:"weight-field" %>
+				</li>
+				<li>
+					<%= label_tag :tech, "Technology" %>
+	  			<%= text_field_tag :tech, nil, autocomplete: "off", class:"weight-field" %>
+				</li>
+				<li>
+					<%= label_tag :medical, "Medical" %>
+	  			<%= text_field_tag :medical, nil, autocomplete: "off", class:"weight-field" %>
+				</li>
+				<li>
+					<%= label_tag :education, "Education" %>
+	  			<%= text_field_tag :education, nil, autocomplete: "off", class:"weight-field" %>
+				</li>			
+				<li>
+					<%= label_tag :personal_care, "Personal Care" %>
+	  			<%= text_field_tag :personal_care, nil, autocomplete: "off", class:"weight-field" %>
+				</li>
+				<li>
+					<%= label_tag :recreation, "Recreation" %>
+	  			<%= text_field_tag :recreation, nil, autocomplete: "off", class:"weight-field" %>
+				</li>
+				<li>
+					<%= label_tag :transport, "Transport" %>
+	  			<%= text_field_tag :transport, nil, autocomplete: "off", class:"weight-field" %>
+				</li>
+				<li>
+					<%= label_tag :housing, "Housing" %>
+	  			<%= text_field_tag :housing, nil, autocomplete: "off", class:"weight-field" %>
+				</li>
+			</ul>
+			<%= link_to "Submit", "#solution", class:'btn btn-large btn-success next' %>
+			<div class="muted">*Inital values are the CPI's Standard Urban Consumer</div>
+		</div>
+	  <%= high_chart("pieChart", @chart) do |c| %>
+      <%= raw "options.tooltip.formatter = function() {return this.point.name +'</b>: '+ this.y +' %';}"  %>
+      <%= raw "options.plotOptions.pie.dataLabels.formatter = function() { if (this.y > 5) return this.point.name; }"  %>
+    <% end %>
 	</div>
 
-	<div class="scene" id="problem">
+	<div class="scene" id="solution">
 
 	<h1>It doesn't add up.</h1>
 	<p>When they say that inflation is only 1.5%. <br> <br>
@@ -70,12 +86,12 @@
 	<h1>Pay Anywhere, Save Everywhere</h1>
 	<p>We provide a <strong>universal payment network</strong>,<br><br> and we aggregate living costs across the US <strong>your savings</strong> travel with you.</p>
 
-
+		<%= link_to "Get More Information", "#join", class:'btn btn-large next pull-right' %>
 	</div>
 
 	<div class="scene" id="join">
 
-		<h2>Join</h2>
+		<h2>Stay In Touch</h2>
 	<%= form_for @email_subscription do |f| %>
 	  <% if @email_subscription.errors.any? %>
 	    <div id="error_explanation">
@@ -91,7 +107,7 @@
 
 	  <%= f.label :email %></br>
 		<%= f.text_field :email %><br>
-		<%= f.submit "Signup" %>
+		<%= f.submit "Stay in Touch", class:"btn btn-success" %>
 	<% end %>
 	</div>
 </div>
