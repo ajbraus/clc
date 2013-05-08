@@ -13,10 +13,24 @@
 
 ActiveRecord::Schema.define(:version => 20120806033958) do
 
-  create_table "email_subscriptions", :force => true do |t|
+  create_table "users", :force => true do |t|
     t.string   "email"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "sex"
+    t.integer  "apparel"
+    t.integer  "food"
+    t.integer  "tech"
+    t.integer  "medical"
+    t.integer  "education"
+    t.integer  "personal_care"
+    t.integer  "recreation"
+    t.integer  "car_travel"
+    t.integer  "non_car_travel"
+    t.integer  "rent"
+    t.integer  "home_ownership"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
+
+  add_index "users", ["email"], :name => "index_users_on_email"
 
 end

@@ -1,9 +1,8 @@
-class WelcomeController < ApplicationController
-  def index
-  	@email_subscription = EmailSubscription.new
-  	@subscription_counter = EmailSubscription.all.count
-  	
-  	@chart = LazyHighCharts::HighChart.new('pie') do |f|
+class UsersController < ActionController::Base
+  def new
+    @cpi_user = User.find_by_email("cpi@user.com")
+    @user = User.new()
+    @chart = LazyHighCharts::HighChart.new('pie') do |f|
       f.chart({:defaultSeriesType=>"pie"}) #, :margin=> [50, 200, 60, 170]} )
       series = {
                :type=> 'pie',
@@ -40,8 +39,35 @@ class WelcomeController < ApplicationController
           }
         }
       })
-		end
+    end
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @cpi_user }
+    end    
+  end
 
+  def create
+    @user = User.new(params[:user])
+ 
+    respond_to do |format|
+      if @user.save
+        format.html { redirect_to root_path, notice: "Thanks! We'll send you more information" }
+        format.json { render json: root_path, status: :created, location: @user }
+      else
+        format.html { redirect_to root_path, alert: 'Invalid Email' }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end 
+  end
 
+  def index
+    @users = User.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @users }
+    end     
   end
 end
+
+

@@ -1,0 +1,123 @@
+<div id="sideways">
+  <div class="scene" id="hero">
+
+  <h1>Your Personalized Cost of Living Calculator</h1>
+    <div class="half-width pull-left">
+      <h3>
+        Are you the same as your neighbor?
+      </h3>
+      <div class="lead">
+        The Bureau of Labor Statistics thinks so. They treat everyone the same.
+      </div>
+      <div class="lead">
+        At Cost of Living Card we believe that your cost of living is personal.
+      </div>
+    </div>
+    <div class="pull-right half-width push-up">
+      <%= image_tag 'blsseesyou.jpg' %>
+      <div class="text-center">
+        <%= link_to "Get Started (Its Free!)", "#problem", class:'btn btn-large btn-primary next' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="scene" id="problem">
+    <h2>Spending Breakdown</h2>
+    <div class="pull-left spending">
+      <%= form_for @user do |f| %>
+      <ul>
+        <li>
+          <%= f.label :apparel, "Apparel" %>
+          <%= f.number_field :apparel, autocomplete: "off", class:"weight-field" %>
+        </li>
+        <li>
+          <%= f.label :food, "Groceries" %>
+          <%= f.number_field :food, autocomplete: "off", class:"weight-field" %>
+        </li>
+        <li>
+          <%= f.label :tech, "Technology" %>
+          <%= f.number_field :tech, autocomplete: "off", class:"weight-field" %>
+        </li>
+        <li>
+          <%= f.label :medical, "Medical" %>
+          <%= f.number_field :medical, autocomplete: "off", class:"weight-field" %>
+        </li>
+        <li>
+          <%= f.label :education, "Education" %>
+          <%= f.number_field :education, autocomplete: "off", class:"weight-field" %>
+        </li>     
+        <li>
+          <%= f.label :personal_care, "Personal Care" %>
+          <%= f.number_field :personal_care, autocomplete: "off", class:"weight-field" %>
+        </li>
+        <li>
+          <%= f.label :recreation, "Recreation" %>
+          <%= f.number_field :recreation, autocomplete: "off", class:"weight-field" %>
+        </li>
+        <li>
+          <%= f.label :car_transport, "Car Transport" %>
+          <%= f.number_field :car_travel, autocomplete: "off", class:"weight-field" %>
+        </li>
+        <li>
+          <%= f.label :non_car_transport, "Non Car Transport" %>
+          <%= f.number_field :non_car_travel, autocomplete: "off", class:"weight-field" %>
+        </li>       
+        <li>
+          <%= f.label :rent, "Rent" %>
+          <%= f.number_field :rent, autocomplete: "off", class:"weight-field" %>
+        </li>
+        <li>
+          <%= f.label :home_ownership, "Home Ownership" %>
+          <%= f.number_field :home_ownership, autocomplete: "off", class:"weight-field" %>
+        </li>
+      </ul>
+      <%= submit_tag "Submit", class:'btn btn-large btn-success next' %>
+      <div class="muted">*Inital values are the CPI's Standard Urban Consumer</div>
+    </div>
+    <% end %>
+    <%= high_chart("pieChart", @chart) do |c| %>
+      <%= raw "options.tooltip.formatter = function() {return this.point.name +'</b>: '+ this.y +' %';}"  %>
+      <%= raw "options.plotOptions.pie.dataLabels.formatter = function() { if (this.y > 5) return this.point.name; }"  %>
+    <% end %>
+  </div>
+
+  <div class="scene" id="solution">
+
+  <h1>It doesn't add up.</h1>
+  <p>When they say that inflation is only 1.5%. <br> <br>
+    In reality inflation is different for everyone, and for most it is  between <strong>3-5%</strong>.</p> 
+
+  <h1>Your one of Millions</h1>
+    <p>Since 2007 US households have increased their savings <strong>300%.</strong><br><br>
+      Over the same time, interest rates fell to <strong>record lows.</strong>
+    </p>
+
+
+  <h1>Pay Anywhere, Save Everywhere</h1>
+  <p>We provide a <strong>universal payment network</strong>,<br><br> and we aggregate living costs across the US <strong>your savings</strong> travel with you.</p>
+
+    <%= link_to "Get More Information", "#join", class:'btn btn-large next pull-right' %>
+  </div>
+
+  <div class="scene" id="join">
+
+    <h2>Stay In Touch</h2>
+  <%= form_for @user do |f| %>
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+        <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= f.label :email %></br>
+    <%= f.text_field :email %><br>
+    <%= f.submit "Stay in Touch", class:"btn btn-success" %>
+  <% end %>
+  </div>
+</div>

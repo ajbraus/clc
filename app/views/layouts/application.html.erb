@@ -40,27 +40,22 @@
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-        <ul class="nav">
-      <li><%= link_to "Cost of Living Card", root_path, class:"brand" %></li>
-      <li><%= link_to "http://costoflivingcard.blogspot.com/" do %>
-        <%= image_tag 'greenfactory.png', width:"20px", class:"factory" %> <span class="greencheese">Blog</span>
-        <% end %>
-      </li>
-    </ul>
+          <ul class="nav">
+            <li><%= link_to "Cost of Living Card", root_path, class:"brand" %></li>
+            <li><%= link_to "http://costoflivingcard.blogspot.com/" do %>
+              <%= image_tag 'greenfactory.png', width:"20px", class:"factory" %> <span class="greencheese">Blog</span>
+              <% end %>
+            </li>
+          </ul>
         </div>      
       </div>
     </div>
 
     <div class="container">
-        <div class="row">
-            <%= bootstrap_flash %>
-            <%= yield %>
-        </div><!--/row-->
-<!-- 
-      <footer>
-        <p>&copy; Costoflivingcard 2013</p>
-      </footer>
- -->
+      <div class="row">
+          <%= bootstrap_flash %>
+          <%= yield %>
+      </div><!--/row-->
     </div> <!-- /container -->
 
     <!-- Javascripts
@@ -70,3 +65,9 @@
 
   </body>
 </html>
+
+<!-- 
+      <footer>
+        <p>&copy; Costoflivingcard 2013</p>
+      </footer>
+ -->
