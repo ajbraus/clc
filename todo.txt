@@ -35,3 +35,21 @@ child care
 
 what is weighted to the CPI? 
   - social security 
+
+
+
+      User.create!(
+    email: "cpi@user.com",
+    sex: "Male",
+    apparel: "",
+    food: "",
+    tech: "",
+    medical: "",
+    education: "",
+    personal_care: "",
+    recreation: "",
+    car_travel: "",
+    non_car_travel: "",
+    rent: "",
+    home_ownership: ""
+    )

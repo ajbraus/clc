@@ -19,19 +19,4 @@ class CreateUsers < ActiveRecord::Migration
     end
     add_index :users, :email
   end
-    User.create!(
-    email: "cpi@user.com",
-    sex: "Male",
-    apparel: "",
-    food: "",
-    tech: "",
-    medical: "",
-    education: "",
-    personal_care: "",
-    recreation: "",
-    car_travel: "",
-    non_car_travel: "",
-    rent: "",
-    home_ownership: ""
-    )
 end

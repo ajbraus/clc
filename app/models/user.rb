@@ -7,8 +7,6 @@ class EmailValidator < ActiveModel::EachValidator
 end
 
 class User < ActiveRecord::Base
-  attr_accessible :email
-
   validates :email, email: true
 
   attr_accessible :email, 
@@ -24,7 +22,5 @@ class User < ActiveRecord::Base
                 :non_car_travel, 
                 :rent,
                 :home_ownership
-
-
 end
 
